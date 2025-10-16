@@ -1,38 +1,34 @@
-// Wrap in DOMContentLoaded Event
-// Ensure the script runs only after the DOM has finished loading:
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+  // Form Selection
   const form = document.getElementById('registration-form');
   const feedbackDiv = document.getElementById('form-feedback');
 
-// Add Event Listener for Submission
-// Prevent the default form submission and prepare for validation
-  form.addEventListener('submit', (event) => {
+  // Form Submission and Event Prevention
+  form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-// Retrieve and Trim Input Values
-// Fetch the user’s input and clean up whitespace
+    // Retrieve User Inputs and Trim
     const username = document.getElementById('username').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
 
-// Initialize Validation Variables
-// We’ll keep track of overall validity and messages:
+    // Initialize Validation Variables
     let isValid = true;
     const messages = [];
 
-    // Username validation
+    // Username Validation
     if (username.length < 3) {
       isValid = false;
       messages.push('Username must be at least 3 characters long.');
     }
 
-    // // Email validation
+    // // Email Validation
     // if (!email.includes('@') || !email.includes('.')) {
     //   isValid = false;
     //   messages.push('Please enter a valid email address.');
     // }
 
-        // Email validation (explicit @ and . check)
+
     if (!email.includes('@') || !email.includes('.')) {
       isValid = false;
       messages.push('Email must include both "@" and "." characters.');
@@ -46,13 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Password validation
+    // Password Validation
     if (password.length < 8) {
       isValid = false;
       messages.push('Password must be at least 8 characters long.');
     }
 
-    // Display feedback
+    // Feedback Display Logic
     feedbackDiv.style.display = 'block';
     if (isValid) {
       feedbackDiv.textContent = 'Registration successful!';
@@ -63,3 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
