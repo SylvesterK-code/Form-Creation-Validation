@@ -134,4 +134,4 @@ GitHub Profile
 
 Qualified Computing and ICT Teacher | Software Developer
 
-“Future Improvements” section (e.g., adding real-time validation, password strength meter, and localStorage persistence)? It’s a great touch that can impress reviewers.
+“Future Improvements” section (e.g., adding real-time validation, password strength meter, and localStorage persistence) It’s a great touch that can impress reviewers.
